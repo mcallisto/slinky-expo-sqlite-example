@@ -1,0 +1,34 @@
+{
+  "expo": {
+    "name": "Sqlite example",
+    "description": "Expo Sqlite example with Slinky and ScalablyTyped",
+    "slug": "slinky-expo-sqlite-example",
+    "privacy": "public",
+    "sdkVersion": "34.0.0",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "packagerOpts": {
+      "config": "metro.config.js"
+    },
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "githubUrl": "https://github.com/mcallisto/slinky-expo-sqlite-example"
+  }
+}
