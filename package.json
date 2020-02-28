@@ -8,14 +8,14 @@
     "eject": "expo eject"
   },
   "dependencies": {
-    "@types/react": "^16.9.16",
+    "@types/react": "16.9.16",
     "@types/react-native": "^0.60.25",
     "expo": "^35.0.0",
     "react": "16.8.3",
     "react-dom": "16.8.3",
     "react-native": "https://github.com/expo/react-native/archive/sdk-34.0.0.tar.gz",
     "react-proxy": "1.1.8",
-    "typescript": "^3.7.3"
+    "typescript": "3.8"
   },
   "devDependencies": {
     "babel-preset-expo": "^5.2.0"
