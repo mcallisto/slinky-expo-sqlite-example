@@ -38,7 +38,7 @@ import slinky.native._
           value = text
         )
       ),
-      ScrollView()(
+      ScrollView(style = Styles.listArea)(
         Items(
           done = false,
           onPressItem = (id: Int) => Database.updateItemWith(id, () => update()),
