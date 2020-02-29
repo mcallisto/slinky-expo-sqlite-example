@@ -1,27 +1,28 @@
 package hello.world
 
-import scala.scalajs.js.Dynamic.literal
 import typings.expoConstants.mod.Constants
+import typings.reactNative.mod.{TextStyle, ViewStyle}
+import typings.reactNative.reactNativeStrings.{bold, center, row}
 
 object Styles {
 
-  val container = literal(
+  val container: ViewStyle = ViewStyle(
     backgroundColor = "#fff",
     flex = 1,
     paddingTop = 10 // todo how to use Constants
   )
 
-  val heading = literal(
+  val heading: TextStyle = TextStyle(
     fontSize = 20,
-    fontWeight = "bold",
-    textAlign = "center"
+    fontWeight = bold,
+    textAlign = center
   )
 
-  val flexRow = literal(
-    flexDirection = "row"
+  val flexRow: ViewStyle = ViewStyle(
+    flexDirection = row
   )
 
-  val input = literal(
+  val input: TextStyle = TextStyle(
     borderColor = "#4630eb",
     borderRadius = 4,
     borderWidth = 1,
@@ -31,41 +32,41 @@ object Styles {
     padding = 8
   )
 
-  val listArea = literal(
+  val listArea: ViewStyle = ViewStyle(
     backgroundColor = "#f0f0f0",
     flex = 1,
     paddingTop = 16
   )
 
-  val sectionContainer = literal(
+  val sectionContainer: ViewStyle = ViewStyle(
     marginBottom = 16,
     marginHorizontal = 16
   )
 
-  val sectionHeading = literal(
+  val sectionHeading: TextStyle = TextStyle(
     fontSize = 18,
     marginBottom = 8
   )
 
-  val touchableDone = literal(
+  val touchableDone: ViewStyle = ViewStyle(
     backgroundColor = "#1c9963", // "#fff",
     borderColor = "#000",
     borderWidth = 1,
     padding = 8
   )
 
-  val touchableUndone = literal(
+  val touchableUndone: ViewStyle = ViewStyle(
     backgroundColor = "#fff",
     borderColor = "#000",
     borderWidth = 1,
     padding = 8
   )
 
-  val touchableTextDone = literal(
+  val touchableTextDone: TextStyle = TextStyle(
     color = "#fff"
   )
 
-  val touchableTextUndone = literal(
+  val touchableTextUndone: TextStyle = TextStyle(
     color = "#000"
   )
 
