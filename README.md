@@ -1,5 +1,5 @@
 # Slinky expo-sqlite-example
-Refactoring of [Expo](https://expo.io)'s [sqlite-example](https://github.com/expo/sqlite-example) coded in [Scala](https://scala-lang.org/) through [Scala.js](https://www.scala-js.org), [Slinky](https://slinky.dev) and [ScalablyTyped](https://github.com/oyvindberg/ScalablyTyped).
+Refactoring of [Expo](https://expo.io)'s [sqlite-example](https://github.com/expo/examples/tree/master/with-sqlite) coded in [Scala](https://scala-lang.org/) through [Scala.js](https://www.scala-js.org), [Slinky](https://slinky.dev) and [ScalablyTyped](https://github.com/oyvindberg/ScalablyTyped).
 
 ## Requirements
 Make sure you have [sbt](https://www.scala-sbt.org) and [yarn](https://yarnpkg.com) installed.
