@@ -12,20 +12,25 @@ object Database {
 
   val db = SQLite.openDatabase("db.db")
 
+  private val tableName = "items"
+  private val idColumn = "id"
+  private val doneColumn = "done"
+  private val valueColumn = "value"
+
   def createTable(): Unit = db.transaction(
     _.executeSql(
-      "create table if not exists items (id integer primary key not null, done int, value text);"
+      s"create table if not exists $tableName ($idColumn integer primary key not null, $doneColumn int, $valueColumn text);"
     )
   )
 
   def insertItem(txt: String, onSuccess: () => Unit): Unit = db.transaction(
     callback = { tx: SQLTransaction =>
       tx.executeSql(
-        "insert into items (done, value) values (0, ?)",
+        s"insert into $tableName ($doneColumn, $valueColumn) values (0, ?)",
         js.Array(txt)
       )
       tx.executeSql(
-        "select * from items",
+        s"select * from $tableName",
         js.Array(),
         (_: SQLTransaction, set: SQLResultSet) => console.log(JSON.stringify(set))
       )
@@ -37,7 +42,7 @@ object Database {
   def updateItemWith(id: Int, onSuccess: () => Unit): Unit = db.transaction(
     callback = { tx: SQLTransaction =>
       tx.executeSql(
-        "update items set done = 1 where id = ?;",
+        s"update $tableName set $doneColumn = 1 where $idColumn = ?;",
         js.Array(id)
       )
     },
@@ -48,7 +53,7 @@ object Database {
   def deleteItemWith(id: Int, onSuccess: () => Unit): Unit = db.transaction(
     callback = { tx: SQLTransaction =>
       tx.executeSql(
-        "delete from items where id = ?;",
+        s"delete from $tableName where $idColumn = ?;",
         js.Array(id)
       )
     },
@@ -59,7 +64,7 @@ object Database {
   def selectFilteredItems(done: Boolean, onFound: List[Item] => Unit): Unit = db.transaction(
     callback = { tx: SQLTransaction =>
       tx.executeSql(
-        "select * from items where done = ?;",
+        s"select * from $tableName where $doneColumn = ?;",
         js.Array({ if (done) 1 else 0 }),
         callback = (_: SQLTransaction, set: SQLResultSet) => {
           val selectedItems = (0 until set.rows.length.toInt)
